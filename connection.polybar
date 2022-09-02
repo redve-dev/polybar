@@ -1,0 +1,13 @@
+[module/connection]
+type = internal/network
+interval = 1
+interface-type = wired
+label-connected = " %{F#0F0}"   
+label-disconnected = %{F#F00}
+foreground = #FF0000
+
+[module/server]
+type = custom/script
+exec = /home/redve/.config/polybar/ping_server.sh
+interval = 1
+click-left = wakeonlan 00:19:99:c1:91:bc

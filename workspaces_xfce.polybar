@@ -1,0 +1,20 @@
+[module/xworkspacesZZ]
+type = internal/xworkspaces
+
+label-active = ●
+label-active-foreground = #ff0000
+label-active-padding = 0
+
+label-occupied = ●
+label-occupied-foreground = #ffffff
+label-occupied-padding = 0
+
+label-empty = ○
+label-empty-foreground = #ffffff
+label-empty-padding = 0
+
+label-separator = "4 "
+label-monitor = " "
+format = <label-monitor><label-state>
+enable-click=true
+enable-scroll=true

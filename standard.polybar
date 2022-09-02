@@ -1,0 +1,67 @@
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume-prefix = " "
+interval = 3
+
+format-volume-prefix-foreground = ${settings.primary}
+format-volume = <label-volume>
+
+label-volume = %percentage:3%%
+
+label-muted = " MUTED"
+label-muted-foreground = ${settings.primary}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${settings.primary}
+label = %percentage_used:2%%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "" 
+format-prefix-foreground = ${settings.primary}
+label = %percentage:2%%
+
+[module/date]
+type = internal/date
+interval = 1
+day = %a
+date = %{F#C5C5C5}|%{F#FF0} %a %{F#FC3232}%d-%m-%Y %H:%M:%S%{F#C5C5C5} |
+label =  %date%
+;label-foreground = ${settings.primary}
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+[module/powermenu]
+type = custom/menu
+label-open = "" 
+label-open-foreground = #f00
+label-close = cancel
+label-close-foreground = #0f0
+label-open-padding = 1 
+label-close-padding = 1 
+
+menu-0-0 = ||
+menu-0-0-exec = reboot
+menu-0-1 = |
+menu-0-1-exec = systemctl poweroff
+menu-0-2 = "|  "  
+menu-0-2-exec = kill -9 -1
+
+menu-0-0-padding = 0
+menu-0-1-padding = 0
+menu-0-2-padding = 0
+
+[module/label]
+type = custom/text
+content = " "
